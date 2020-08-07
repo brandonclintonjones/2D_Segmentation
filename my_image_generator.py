@@ -149,8 +149,10 @@ class data_generator:
 
 
     def shuffle_data(self):
+        # This just randomizes the data order to improve convergence
         # NOTE: ONLY SHUFFLE THE TRAINING DATA FOR GRADIENT DESCENT
         # NEVER A REASON TO SHUFFLE THE VALIDATION DATA
+
 
         num_train_scans = len(self.train_scan_names)
         
@@ -244,6 +246,7 @@ class data_generator:
 
 
     def get_batch(self,batch_ind = 0,is_train=True):
+        
 
 
         if batch_ind == 0 and self.bool_shuffle:
@@ -389,6 +392,8 @@ class data_generator:
         img = img / np.amax(img)
 
         return (img,mask)
+
+        
 
     def print_range(self,img):
 
